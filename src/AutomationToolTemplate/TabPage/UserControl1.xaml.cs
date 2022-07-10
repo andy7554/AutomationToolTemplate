@@ -117,6 +117,7 @@ namespace AutomationTool.TabPage
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
             //open window
+            //new
             CreateTestWindow testWindow = new CreateTestWindow();
             testWindow.ShowDialog();
 
