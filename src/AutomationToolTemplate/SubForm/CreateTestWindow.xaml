@@ -1,0 +1,49 @@
+﻿<Controls:MetroWindow x:Class="AutomationTool.SubForm.CreateTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutomationTool.SubForm"
+        mc:Ignorable="d"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        WindowStartupLocation="CenterOwner"  ResizeMode="NoResize"
+        Title="CREATE TEST" Height="605" Width="550">
+    <Grid Margin="0,0,0,15" >
+        <Label x:Name="label" Content="Device Name" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="143,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" MaxLength="20" IsEnabled="False" Text="OviedoA_0093"/>
+        <CheckBox x:Name="selectAllCheckbox" IsChecked="True" Content="Select All" HorizontalAlignment="Left" Margin="47,177,0,0" VerticalAlignment="Top" FontSize="14"  Height="20" RenderTransformOrigin="0.55,4.105"/>
+
+        <DataGrid  AutoGenerateColumns="False" HorizontalAlignment="Center" Margin="52,211,37,47" Name="DataGridTestItem" BorderThickness="1,1,1,1" BorderBrush="Gainsboro" VerticalAlignment="Stretch" ItemsSource="{Binding}" HorizontalScrollBarVisibility="Disabled" CanUserAddRows="False" Width="455" >
+
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Selection" Width="100" Binding="{Binding Checked}" CanUserSort="False">
+                    <DataGridCheckBoxColumn.CellStyle>
+
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="IsEnabled" Value="{Binding IsEnable}" />
+                        </Style>
+                    </DataGridCheckBoxColumn.CellStyle>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn  IsReadOnly="True" CanUserSort="False" Header="Test Item" Width="300" Binding="{Binding TestName}" >
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button x:Name="btnSave" Content="Run" HorizontalAlignment="Left" Margin="207,524,0,0" VerticalAlignment="Top" Width="76" />
+        <Button x:Name="btnClose" Content="Cancel" HorizontalAlignment="Left" Margin="305,524,0,0" VerticalAlignment="Top" Width="76" />
+        <Label x:Name="label_Copy" Content="IP Address:" HorizontalAlignment="Left" Margin="47,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="text_IPAddress" HorizontalAlignment="Left" Height="23" Margin="143,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" MaxLength="20" IsEnabled="False" Text="192.168.0.101"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="143,119,0,0" VerticalAlignment="Top" Width="227">
+            <ComboBoxItem Content="AC" HorizontalAlignment="Left" Width="225" IsSelected="True"/>
+            <ComboBoxItem Content="DC" HorizontalAlignment="Left" Width="225" IsSelected="False"/>
+            <ComboBoxItem Content="AC / DC" HorizontalAlignment="Left" Width="225" IsSelected="False"/>
+        </ComboBox>
+        <Label x:Name="label_Copy1" Content="Power Status:" HorizontalAlignment="Left" Margin="47,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,1.077"/>
+
+    </Grid>
+</Controls:MetroWindow>
+
+
